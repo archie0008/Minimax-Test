@@ -36,16 +36,13 @@
 #define ANGLE_MAX 1800
 #define ANGLE_DFLT 0
 
-#define SOFTNESS_MIN 0
-#define SOFTNESS_MAX 100
-#define SOFTNESS_DFLT 0
 
 enum {
     BETTERMINIMAX_INPUT = 0,
     BETTERMINIMAX_RADIUS,
     BETTERMINIMAX_ANGLE,
     BETTERMINIMAX_OPERATION,
-    BETTERMINIMAX_SOFTNESS,
+    BETTERMINIMAX_MAP,
     BETTERMINIMAX_CHANNEL,
     BETTERMINIMAX_NUM_PARAMS
 };
@@ -54,19 +51,30 @@ enum {
     RADIUS_DISK_ID = 1,
     ANGLE_DISK_ID,
     OPERATION_DISK_ID,
-    SOFTNESS_DISK_ID,
+    MAP_DISK_ID,
     CHANNEL_DISK_ID
 };
 
 enum {
-    OP_MAX = 1,
-    OP_MIN = 2
+    MAP_BOTH = 1,
+    MAP_HORIZONTAL = 2,
+    MAP_VERTICAL = 3
 };
 
 enum {
-    CH_RGB = 1,
-    CH_ALPHA = 2,
-    CH_RGBA = 3
+    OP_MAX = 1,
+    OP_MIN = 2,
+    OP_MIN_THEN_MAX = 3,
+    OP_MAX_THEN_MIN = 4
+};
+
+enum {
+    CH_COLOR = 1,
+    CH_ALPHA_COLOR = 2,
+    CH_RED = 3,
+    CH_GREEN = 4,
+    CH_BLUE = 5,
+    CH_ALPHA = 6
 };
 
 #ifdef __cplusplus
